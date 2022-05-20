@@ -9,10 +9,6 @@ const MealsOverviewScreen = () => {
   const route = useRoute()
   const navigation = useNavigation()
 
-  const handleDetail = () => {
-    navigation.navigate('MealDetail')
-  }
-
   const catId = route.params.categoryId
 
   const displayedMeals = MEALS.filter((mealItem) => {
@@ -30,6 +26,11 @@ const MealsOverviewScreen = () => {
   }, [catId, navigation])
 
   const renderMealItem = (itemData) => {
+    const handleDetail = () => {
+      navigation.navigate('MealDetail', {
+        id: itemData.item.id,
+      })
+    }
     return (
       <MealItem
         title={itemData.item.title}
