@@ -7,7 +7,7 @@ import {
   Platform,
 } from 'react-native'
 import React from 'react'
-import MealDetails from './MealDetails'
+import MealDetails from '../MealDetails'
 
 const MealItem = ({
   title,
